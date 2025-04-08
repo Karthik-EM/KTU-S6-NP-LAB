@@ -33,4 +33,5 @@ int main()
 	scanf("%s",msg);
 	sendto(server_soc,msg,strlen(msg)+1,0,(struct sockaddr*)&client_address,client_len);
 	printf("msg sent\n");
+	close(server_soc)
 }
