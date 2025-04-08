@@ -17,7 +17,7 @@ int main()
 	{
 		printf("socket created.\n");
 	}
-	
+	//initialization
 	struct sockaddr_in server_address;
 	struct sockaddr_in client_address;
 	server_address.sin_family=AF_INET;
@@ -35,4 +35,6 @@ int main()
 	//receving message from client
 	recvfrom(client_soc,buffer,sizeof(buffer),0,(struct sockaddr*)&server_address,&server_len);
 	printf("server  says:%s\n",buffer);
+	//closing
+	close(client_soc);
 }
