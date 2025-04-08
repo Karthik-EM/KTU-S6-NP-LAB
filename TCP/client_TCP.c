@@ -8,6 +8,7 @@ int main()
 	int server_soc,client_soc;
 		char buffer[20];
 		char msg[20];
+	//creating socket
 	client_soc=socket(AF_INET,SOCK_STREAM,0);
 		if(client_soc==-1)
 		{
@@ -26,7 +27,7 @@ int main()
 	while(1)
 	{
 		
-		printf("entaer message:");
+		printf("enter message:");
 		scanf("%s",msg);
 		send(client_soc,msg,strlen(msg)+1,0);
 		recv(client_soc,buffer,sizeof(buffer),0);
